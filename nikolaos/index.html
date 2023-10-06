@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="el">
+  <head>
+    <meta charset="utf-8">
+    <title data-i18nkey="title">Αληθινές ιστορίες - Άγιος Νικόλαος</title>
+    <link rel="stylesheet" href="assets/bookblock.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/jquery.js"></script>
+    <script src="assets/modernizr.custom.js"></script>
+    <script src="assets/jquery.bookblock.min.js"></script>
+    <script src="assets/view.js"></script>
+  </head>
+
+  <body onload="init_flip()" onblur="stop_audio()" onresize="resize_flip()">
+    <audio id="audio" ontimeupdate="audio_update()" onended="audio_ended()"></audio>
+    <div class="bb-bookblock" id="flip">
+      <div class="bb-item page">
+        <img class="bg" src="pages/0_bg.png">
+        <div class="lefttitle">Άγιος Νικόλαος<br>ο ϑαυματουργός</div>
+        <div class="intro">
+          <div class="pretitle">Πάμε για αληϑινές ιστορίες!</div>
+          <div class="maintitle">Άγιος Νικόλαος ο ϑαυματουργός</div>
+          <p class="helptext">
+            Αγγίξτε την οϑόνη στην αριστερή ή τη δεξιά πλευρά για να αλλάξετε σελίδες.
+            Ο ήχος αναπαράγεται αυτόματα καϑώς γυρίζει η σελίδα.
+            Τα αστεράκια σας δείχνουν επιπλέον εικόνες.
+          </p>
+          <a href="javascript:display_image(8, 1)">
+            <img src="icons/star.svg" style="width: 3em; height: 3em">
+          </a>
+        </div>
+        <div class="credits">
+          <p><b>Εικονογράφηση:</b> Κωνσταντίνα Ζαφείρη</p>
+          <p><b>Αφήγηση:</b> Σταύρος Σταμάτης</p>
+          <p><b>Απολυτίκιο:</b> Ιερομ. Τύχων Σιμωνοπετρίτης</p>
+          <p><b>Επεξεργασία ήχου:</b> Kevin McCann / Timeskyproductions</p>
+          <p><b>Επιμέλεια/app:</b> &copy; Μάρκος Σκουλάτος & Georg Brandl</p>
+          <p style="font-size: 120%"><a href="https://true-stories-apps.github.io/el/" target ="_blank">Ιστοσελίδα</a></p>
+          <p><b>Με την ευγενική υποστήριξη της Ιεράς Μητροπόλεως<br> Καλαβρύτων και Αιγιαλείας</b></p>
+        </div>
+      </div>
+      <div class="bb-item page">
+        <img class="bg" src="pages/1_bg.png">
+        <div class="text" id="text-1" style="height: 79%">
+          <div class="text-scroll" id="text-scroll-1">
+            <img class="initial" src="pages/1_initial.png">
+            άγιος Νικόλαος ο ϑαυματουργός γεννήϑηκε στα Πάταρα της Λυκίας, στα παράλια της
+            Μικράς Ασίας, 270 χρόνια μετά τη γέννηση του Χριστού. Οι γονείς του ήταν ευσεβείς
+            και τον μεγάλωσαν με οδηγό τα λόγια του Χριστού. Από βρέφος ακόμα ήταν κοντά στο
+            Θεό. Κάϑε Τετάρτη και Παρασκευή, που είναι μέρες νη&shy;στείας, έπινε γάλα μόνο μία φορά
+            την ημέρα, και αυτό, μετά τη δύση του ηλίου. Στο σχολείο ήταν φρόνιμος μαϑητής. Με
+            το χτύπημα της καμπάνας έτρεχε πρώτος στην εκκλησία γεμάτος λαχτάρα. Εκεί, κάτω από
+            το σι&shy;γανό φως των καντηλιών και τη μυρωδιά του λιβανιού προσ&shy;ευχόταν με πίστη και η
+            παιδική του καρδιά πλημμύ&shy;ριζε από μία ουράνια χαρά. Ο άγιος Νικόλαος έμεινε από
+            μικρός ορφανός. Είχε αρκετή περιουσία για μια εύκολη και άνετη ζωή. Δεν ακολούϑησε
+            όμως τον εύκολο δρόμο, αλλά διάλεξε το δρόμο της άσκησης και της αρετής. Όταν έφτασε
+            στην κατάλληλη ηλικία έγινε ιερέας. Στην χει&shy;ροτονία του, ο ϑείος του Αρχιερεύς,
+            φωτισμένος από το Άγιο Πνεύμα είπε: “Αυτός εδώ ο νέος πολλούς ϑλιμμέ&shy;νους και
+            πονεμένους ϑα παρηγορήσει και πολλές ψυχές ϑα στείλει στη Βασιλεία των ουρανών.”
+          </div>
+        </div>
+        <div class="play-button">
+          <a href="javascript:play_or_pause()">
+            <img src="icons/play-pause.svg" style="width: 100%">
+          </a>
+        </div>
+      </div>
+      <div class="bb-item page">
+        <img class="bg" src="pages/2_bg.png">
+        <div class="text" id="text-2" style="height: 79%">
+          <div class="text-scroll" id="text-scroll-2">
+            <img class="initial" src="pages/2_initial.png">
+            αγάπη του για τους ανϑρώπους και ιδιαίτερα τους φτωχούς και τους αδυνάτους ήταν
+            μεγάλη. Σκεπτόταν πάντα πρώτα τους άλλους. Όλη την πα&shy;τρική του περιουσία τη διέϑεσε
+            στους φτωχούς, τις χήρες και τα ορφανά. Κάποτε στα Πάταρα ήταν τρεις φτωχές αδερφές.
+            Ο άγιος Νικόλαος πήγε το βράδυ έξω από το σπίτι τους και έριξε κρυφά από το παράϑυρο
+            ένα μαντήλι με τριακόσια φλουριά. Το πρωί που ξύπνησε η οικογένεια, τα είδαν και δεν
+            πίστευαν στα μάτια τους. Ο πατέρας δόξασε το Θεό, και με αυτά τα χρήματα πάντρεψε τη
+            μεγάλη του κόρη. Ο άγιος ξαναέριξε στα κρυφά ένα μαντήλι με φλουριά, και έτσι
+            παντρεύτηκε και η δεύτερη κόρη. &nbsp;Θέλοντας να ολοκληρώσει το καλό πήγε προσεκτι&shy;κά για
+            να μην τον δει κανείς και έριξε και το τρίτο μαντήλι με φλουριά. Ο πατέρας όμως που
+            ήϑελε να γνωρίσει τον ευεργέτη του, μόλις άκουσε ϑόρυβο βγήκε γρήγορα έξω και
+            πρόλαβε τον άγιο που έφευγε τρέχοντας. Αμέσως τον ευχαρίστησε για το καλό που του
+            έκανε. Ο άγιος, επειδή δεν ήϑελε τον έπαινο των ανϑρώπων, ζήτησε από τον πατέρα να
+            μην πει τίποτα όσο ζει.
+          </div>
+        </div>
+        <div class="star" style="left: 30%; top: 6%">
+          <a href="javascript:display_image(2, 1)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="play-button">
+          <a href="javascript:play_or_pause()">
+            <img src="icons/play-pause.svg" style="width: 100%">
+          </a>
+        </div>
+      </div>
+      <div class="bb-item page">
+        <img class="bg" src="pages/3_bg.png">
+        <div class="text" id="text-3" style="height: 72%">
+          <div class="text-scroll" id="text-scroll-3">
+            <img class="initial" src="pages/3_initial.png">
+            άγιος Νικόλαος ξεκίνησε να επισκεφϑεί τα Ιεροσόλυμα για να προσκυνήσει τον Πανάγιο
+            τάφο του Κυρίου και να βρει εκεί ένα μέρος κατάλληλο για να μονάσει. Ενώ ήταν στο
+            πλοίο ξέσπασε μεγάλη ϑαλασσοταραχή. Το πλοίο πάλευε με τα αφρισμένα κύματα. Ο
+            καπετάνιος και οι ναύτες δεν ήξεραν τι να κά&shy;νουν για να σωϑούν. Οι επιβάτες είχαν
+            χάσει την ψυχραιμία τους. Ήταν σίγουροι ότι ϑα πνιγούν. Ο άγιος Νικόλαος ήρεμος,
+            προσευχόταν γονατιστός να σταματήσει η τρικυμία και ευϑύς το ϑαύμα έγινε. Οι άνεμοι
+            κόπασαν και η ϑάλασσα αμέσως γαλήνεψε. Όλοι άρχισαν να ευ&shy;χαριστούν το Θεό και τον
+            άγιο που τους έσωσε. Την ώρα της τρικυμίας όμως, ένας ναύτης γλίστρησε από το
+            κα&shy;τάρτι και έπεσε νεκρός στο κατάστρωμα. Ο άγιος Νικόλαος μετά από ϑερμή προσευχή,
+            έπιασε το ναύτη από το χέρι και εκείνος αναστήϑηκε σαν να ξύπνησε από βαϑύ ύπνο.
+            Όταν έφτασαν, ο άγιος προσκύνησε τον Πανάγιο Τάφο και επι&shy;ϑυμούσε να μείνει στους
+            Αγίους Τόπους. Όμως, άγγελος Κυρίου εμφανίστηκε και τον πρόσταξε να επι&shy;στρέψει στην
+            πατρίδα του.
+          </div>
+        </div>
+        <div class="star" style="left: 9%; top: 6%">
+          <a href="javascript:display_image(3, 1)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="play-button">
+          <a href="javascript:play_or_pause()">
+            <img src="icons/play-pause.svg" style="width: 100%">
+          </a>
+        </div>
+      </div>
+      <div class="bb-item page">
+        <img class="bg" src="pages/4_bg.png">
+        <div class="text" id="text-4" style="height: 72%">
+          <div class="text-scroll" id="text-scroll-4">
+            <img class="initial" src="pages/4_initial.png">
+            ην εποχή εκείνη εμφανίστηκε ο αιρετικός Άρειος, με λανϑασμένες και ψεύτικες ιδέες
+            για το Θεό. Μερικοί δύστυχοι, νόμιζαν πως λέει αλήϑειες και μπερδεμένοι, ακολούϑησαν
+            την αίρεσή του. Ο μέγας και άγιος Κωνσταντίνος, που ήταν τότε βασιλιάς, κάλεσε
+            όλους τους αρχιερείς στην πόλη Νίκαια, για να προ&shy;σευχηϑούν και να φανερώσει ο Θεός
+            την αλήϑεια. 318 Πατέρες της εκκλησίας μαζεύτηκαν, μαζί τους και οι άγιοι Αϑανάσιος
+            και Σπυρίδωνας. Όταν ο Άρειος έφερε σε δύσκολη ϑέση τους αγίους Πατέρες, ο άγιος
+            Σπυρίδωνας έκανε το ϑαύμα με το κεραμίδι. Έβαλε δηλαδή ένα κομ&shy;μάτι κεραμίδι στο χέρι
+            του, προσευχήϑηκε και αυτό χωρίστηκε στα τρία μέρη του: σε χώμα, νερό και φωτιά. Με
+            αυτό το ϑαύμα φανέρωσε τον τριαδικό Θεό: Πατέρας, Υιός και Άγιο Πνεύμα. Ο Άρειος
+            συνέχισε να υποστηρίζει με πείσμα τις ψεύτικες ιδέες του. Ο άγιος Νικόλαος κινήϑηκε
+            από ϑείο ζήλο, και παρόλο που ήταν πολύ πράος, έδωσε ένα δυνατό χαστούκι στον Άρειο.
+            Επειδή όμως απα&shy;γορευόταν να χτυπήσει κανείς κάποιον μπροστά στο βασιλιά, έδεσαν τον
+            άγιο και τον έκλεισαν φυλακή.
+          </div>
+        </div>
+        <div class="star" style="left: 29%; top: 3%">
+          <a href="javascript:display_image(4, 1)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="star" style="left: 10%; top: 80%">
+          <a href="javascript:display_image(4, 2)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="play-button">
+          <a href="javascript:play_or_pause()">
+            <img src="icons/play-pause.svg" style="width: 100%">
+          </a>
+        </div>
+      </div>
+      <div class="bb-item page">
+        <img class="bg" src="pages/5_bg.png">
+        <div class="text" id="text-5" style="height: 66%">
+          <div class="text-scroll" id="text-scroll-5">
+            <img class="initial" src="pages/5_initial.png">
+            την φυλακή προσευχόταν συνέχεια. Το ίδιο βράδυ εμφανίστηκαν στον άγιο ο Χριστός και
+            η Παναγία και τον ρώτησαν: “Νικόλαε, γιατί είσαι φυλακισμένος;”. “Για τη δική σας
+            αγάπη”, απάντησε όλο χαρά αυτός. Τότε ο Χριστός ευϑύς του έλυσε τα δεσμά και του
+            έδωσε το ευαγγέλιο και η Παναγία του φόρεσε το ωμοφόριο του αρχιερέα. Όταν την
+            επόμενη μέρα του πήγαν φαγητό στο κελί του, τον είδαν να φορά το ωμοφόριο και να
+            διαβάζει το ευαγγέλιο. Έκπληκτοι οι δεσμοφύλακες τον ρώτησαν τι είχε συμβεί. Ο άγιος
+            τους διηγήϑηκε τι είχε γίνει το προηγούμενο βράδυ. Ο βασιλιάς πρόσταξε αμέσως να τον
+            βγάλουν από τη φυλακή και του ζήτησε συγχώρεση. Το ίδιο έκαναν και οι αρχιερείς.
+            Αφού έγιναν αυτά και άλλα πολλά ϑαύματα από τους αγίους Πατέρες εκείνες τις μέρες, η
+            αλήϑεια του Χριστού έλαμψε και όλοι μαζί δόξασαν το Θεό. Ύστερα πήγαν ευχα&shy;ριστημένοι
+            στα σπίτια τους.
+          </div>
+        </div>
+        <div class="star" style="left: 12%; top: 5.5%">
+          <a href="javascript:display_image(5, 1)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="play-button">
+          <a href="javascript:play_or_pause()">
+            <img src="icons/play-pause.svg" style="width: 100%">
+          </a>
+        </div>
+      </div>
+      <div class="bb-item page">
+        <img class="bg" src="pages/6_bg.png">
+        <div class="text" id="text-6" style="height: 79%">
+          <div class="text-scroll" id="text-scroll-6">
+            <img class="initial" src="pages/6_initial.png">
+            ολλά από τα ϑαύματα του αγίου Νικολάου είχαν σχέση με τη ϑάλασσα, γι’αυτό και είναι
+            ο προ&shy;στάτης των ναυτικών. Κάποτε, μερικοί ναύτες κινδύνεψαν να πνιγούν κατά τη
+            διάρκεια του ταξιδιού τους. Σε εκείνη τη δύσκολη στιγμή, έχοντας ακούσει για τον
+            άγιο τον επικαλέστηκαν: “Άγιε Νικόλα βόηϑα μας γιατί πνιγόμαστε”! Αμέσως εμφανίζεται
+            ο άγιος να πιάνει το τιμόνι του καραβιού και να τους λέει: “Μη φοβάσϑε. Είμαι μαζί
+            σας. Με φωνάξατε και ήρϑα να σας βοηϑήσω.” Ο άνεμος τότε κόπασε, η ϑάλασσα γαλήνεψε
+            και ο άγιος εξαφανίστηκε. Οι ναύτες άραξαν το πλοίο στο λιμάνι των Μύρων και πήγαν
+            να ευχαριστήσουν τον άγιο που τους έσωσε από βέβαιο πνιγμό. Μόλις μπήκαν στην
+            εκκλησία τον αναγνώρισαν αμέσως: ήταν όπως τον πρωτο&shy;συν&shy;άντησαν στη ϑάλασσα. Γι’αυτό
+            και στο τιμόνι κάϑε πλοίου υπάρχει η εικόνα του αγίου. Σε κάϑε νησί της Ελλάδος
+            υπάρχει τουλάχιστον μία εκκλησία αφιερωμένη στο όνομά του. Οι ναυτικοί αυτόν
+            επικαλούνται πάντα στις δυσκολίες της ϑάλασσας. “Αη Νικόλα σώσε μας”!
+          </div>
+        </div>
+        <div class="star" style="left: 42%; top: 5%">
+          <a href="javascript:display_image(6, 1)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="star" style="left: 12%; top: 3%">
+          <a href="javascript:display_image(6, 2)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="play-button">
+          <a href="javascript:play_or_pause()">
+            <img src="icons/play-pause.svg" style="width: 100%">
+          </a>
+        </div>
+      </div>
+      <div class="bb-item page">
+        <img class="bg" src="pages/7_bg.png">
+        <div class="text" id="text-7" style="height: 79%">
+          <div class="text-scroll" id="text-scroll-7">
+            <img class="initial" src="pages/7_initial.png">
+            ε προχωρημένη ηλικία ο άγιος αρρώστησε και μετά από λίγο κοιμήϑηκε ειρηνικά. Καϑώς
+            προ&shy;σευχόταν κοίταξε ψηλά και είδε τους αγγέλους που έρχονταν να μεταφέρουν την
+            αγιασμένη ψυχή του. Ο άγιος Νικόλαος ήταν για τον λαό ο ήλιος που έλαμπε και
+            φώτιζε τις ψυχές τους. Το πρόσωπό του ακτινοβολούσε σαν άγγελος, ώστε δεν χρειαζόταν
+            να δώσει πολλές συμ&shy;βουλές. Αρκούσε μόνο να τον δει κάποιος και έπαιρνε δύναμη. Ο
+            ϑάνατός του, προκάλεσε πόνο στους πιστούς αλλά και μεγάλη χαρά που ϑα είχαν πια έναν
+            τόσο μεγάλο πρεσβευτή στους ουρανούς. Το σώμα του ενταφιάστηκε στα Μύρα της Μικράς
+            Ασίας και οι χριστιανοί έκτισαν εκεί μεγάλη εκκλησία προς τιμήν του. Μάλιστα, ο Θεός
+            του έδωσε το εξαίρετο χάρισμα να αναβλύζει μύρο ο τάφος του. Γι’ αυτό είναι γνωστός
+            και ως μυροβλήτης. Η εκκλη&shy;σία τιμά τη μνήμη του στις 6 Δεκεμ&shy;βρίου και τον έχει
+            κατατάξει μαζί με τους Αποστόλους του Χριστού, ως ισαπόστολο. Κάϑε Πέμπτη που είναι
+            μέρα αφιερωμένη στους Αποστόλους και στον μέγα ιεράρχη Νικόλαο, ψάλλονται ωραιότατοι
+            ύμνοι και εγκώμια για τον άγιο, που προστατεύει ιδιαίτερα τους ναυτικούς.
+          </div>
+        </div>
+        <div class="star" style="left: 6%; top: 8%">
+          <a href="javascript:display_image(7, 1)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="star" style="left: 38%; top: 3%">
+          <a href="javascript:display_image(7, 2)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="play-button">
+          <a href="javascript:play_or_pause()">
+            <img src="icons/play-pause.svg" style="width: 100%">
+          </a>
+        </div>
+      </div>
+      <div class="bb-item page">
+        <img class="bg" src="pages/8_bg.png">
+        <div class="ctext" style="left: 8%; top: 69.5%; text-align: center; color: white">
+          Κανόνα πίστεως καὶ εἰκόνα πραότητος,<br>
+          ἐγκρατείας Διδάσκαλον, ἀνέδειξέ σε τῇ ποίμνῃ σου,<br>
+          ἡ τῶν πραγμάτων ἀλήϑεια·<br>
+          διὰ τοῦτο ἐκτήσω τῇ ταπεινώσει τὰ ὑψηλά,<br>
+          τῇ πτωχείᾳ τὰ πλούσια. Πάτερ Ἱεράρχα Νικόλαε,<br>
+          πρέσβευε Χριστῷ τῷ Θεῷ, σωϑῆναι τὰς ψυχὰς ἡμῶν.
+        </div>
+        <div class="ctext" style="left: 59%; top: 22%">Ιωνία</div>
+        <div class="ctext" style="left: 66%; top: 16.5%">Λυδία</div>
+        <div class="ctext" style="left: 75%; top: 17.5%">Λυκαονία</div>
+        <div class="ctext" style="left: 86.5%; top: 19%">Καππαδοκία</div>
+        <div class="ctext" style="left: 62%; top: 26%">Καρία</div>
+        <div class="ctext" style="left: 69%; top: 23.5%">Πισιδία</div>
+        <div class="ctext" style="left: 74%; top: 27.5%">Παμφυλία</div>
+        <div class="ctext" style="left: 86%; top: 28.5%">Κιλικία</div>
+        <div class="ctext" style="left: 66%; top: 32%; font-weight: bold">Λυκία</div>
+        <div class="ctext" style="left: 63.2%; top: 37.2%; font-weight: bold">Πάταρα</div>
+        <div class="ctext" style="left: 69%; top: 37%; font-weight: bold">Μύρα</div>
+        <div class="ctext" style="left: 59.5%; top: 39.5%">Ρόδος</div>
+        <div class="ctext" style="left: 56.5%; top: 44%">Κάρπαϑος</div>
+        <div class="ctext" style="left: 82%; top: 47%">Κύπρος</div>
+        <div class="ctext" style="left: 90.5%; top: 49.5%">Λίβανος</div>
+        <div class="ctext" style="left: 87.5%; top: 63%; font-weight: bold">Ιερουσαλήμ</div>
+        <div class="ctext" style="left: 84%; top: 71.5%">Ισραήλ</div>
+        <div class="ctext" style="left: 72%; top: 76%">Κάιρο</div>
+        <div class="ctext" style="left: 71%; top: 70.5%">Αίγυπτος</div>
+        <div class="ctext" style="left: 61%; top: 69%">Αλεξάνδρεια</div>
+        <div class="ctext" style="left: 60%; top: 52%; font-size: calc(2.5 * var(--vh))">
+          <svg viewBox="0 0 500 500">
+            <path id="curve" d="m 0.64003056,42.550399 c 0,0 152.80083944,81.430031 303.76205944,65.962561" style="fill: none" />
+            <text width="500" style="fill: #3871c1">
+              <textPath xlink:href="#curve">Μεσόγειος Θάλασσα</textPath>
+            </text>
+          </svg>
+        </div>
+        <div class="star" style="left: 6%; top: 8%">
+          <a href="javascript:display_image(8, 2)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="play-button">
+          <a href="javascript:play_or_pause()">
+            <img src="icons/play-pause.svg" style="width: 100%">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="images" style="z-index: 100" onclick="hide_image()">
+      <img class="image" id="image-2-1" src="images/2_1.jpg">
+      <img class="image" id="image-3-1" src="images/3_1.jpg">
+      <img class="image" id="image-4-1" src="images/4_1.jpg">
+      <img class="image" id="image-4-2" src="images/4_2.jpg">
+      <img class="image" id="image-5-1" src="images/5_1.jpg">
+      <img class="image" id="image-6-1" src="images/6_1.jpg">
+      <img class="image" id="image-6-2" src="images/6_2.jpg">
+      <img class="image" id="image-7-1" src="images/7_1.jpg">
+      <img class="image" id="image-7-2" src="images/7_2.jpg">
+      <img class="image" id="image-8-1" src="images/8_1.jpg">
+      <img class="image" id="image-8-2" src="images/8_2.jpg">
+    </div>
+  </body>
+</html>

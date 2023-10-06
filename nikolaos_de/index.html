@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="el">
+  <head>
+    <meta charset="utf-8">
+    <title data-i18nkey="title">Wahre Geschichten - Der Heilige Nikolaus</title>
+    <link rel="stylesheet" href="assets/bookblock.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/jquery.js"></script>
+    <script src="assets/modernizr.custom.js"></script>
+    <script src="assets/jquery.bookblock.min.js"></script>
+    <script src="assets/view.js"></script>
+  </head>
+
+  <body onload="init_flip()" onblur="stop_audio()" onresize="resize_flip()">
+    <audio id="audio" ontimeupdate="audio_update()" onended="audio_ended()"></audio>
+    <div class="bb-bookblock" id="flip">
+      <div class="bb-item page">
+        <img class="bg" src="pages/0_bg.png">
+        <div class="lefttitle">Der wundertätige<br>Heilige Nikolaus</div>
+        <div class="intro">
+          <div class="pretitle">Wir erzählen wahre Geschichten!</div>
+          <div class="maintitle">Der wundertätige Heilige Nikolaus</div>
+          <p class="helptext">
+            Tippe auf die linke oder rechte Seite des Bildschirms, um die Seite zu wechseln.
+            Der Ton wird automatisch beim Seitenwechsel wiedergegeben.
+            Die Sternchen zeigen dir weitere Bilder.
+          </p>
+          <a href="javascript:display_image(8, 1)">
+            <img src="icons/star.svg" style="width: 3em; height: 3em">
+          </a>
+        </div>
+        <div class="credits">
+          <p>&nbsp;</p>
+          <p><b>Zeichnungen:</b> Konstantina Zafeiri</p>
+          <p><b>Erzählung/Gesang:</b> Archimandrit Georgios Siomos</p>
+          <p><b>Lektorat/App:</b> &copy; Markos Skoulatos & Georg Brandl</p>
+          <p>Mit freundlicher Unterstützung der Griechisch-Orthodoxen Metropolie, Allerheiligenkirche zu München</p>
+          <p style="font-size: 120%"><a href="https://true-stories-apps.github.io/el/" target ="_blank">Webseite</a></p>
+        </div>
+      </div>
+      <div class="bb-item page">
+        <img class="bg" src="pages/1_bg.png">
+        <div class="text" id="text-1" style="height: 79%">
+          <div class="text-scroll" id="text-scroll-1">
+            Der wundertätige Heilige Nikolaus wurde in Patara/Lykien an der Küste Kleinasiens
+            270 Jahre nach Christi Geburt geboren. Seine Eltern waren fromm und zogen ihn
+            christlich auf. Bereits als Säugling war er nah bei Gott. Jeden Mittwoch und
+            Freitag, also an den Fastentagen, trank er täglich nur einmal Milch, und das
+            nach Sonnenuntergang. In der Schule war er ein bedächtiger Schüler. Beim ersten
+            Glockengeläut lief er als erster voller Freude in die Kirche. Dort, unter dem
+            schummrigen Kerzenlicht und bei Weihrauchgeruch, betete er und sein kindliches
+            Herz füllte sich mit himmlischer Freude. Der Heilige Nikolaus wurde früh Waise.
+            Er hatte auskömmlichen Besitz und ein einfaches, aber sorgenfreies Leben.
+            Dennoch begab er sich nicht auf den einfachen Weg, sondern wählte den Weg
+            der Askese und Tugend.  Als er älter wurde, wurde er Priester. Bei seiner Weihe
+            sagt sein Onkel,  erfüllt vom Heiligen Geist: „Dieser Neue hier wird viele
+            Betrübte und Leidende trösten und viele Seelen in das himmlische Reich senden.‟
+          </div>
+        </div>
+        <div class="play-button">
+          <a href="javascript:play_or_pause()">
+            <img src="icons/play-pause.svg" style="width: 100%">
+          </a>
+        </div>
+      </div>
+      <div class="bb-item page">
+        <img class="bg" src="pages/2_bg.png">
+        <div class="text" id="text-2" style="height: 79%">
+          <div class="text-scroll" id="text-scroll-2">
+            Seine Liebe für die Menschen, und besonders für die Armen und Schwachen, war
+            groß. Er dachte immer zuerst an die Anderen. Sein gesamtes vom Vater ererbtes
+            Vermögen stellte er den Armen zu Verfügung, den Witwen und den Waisen. Einst
+            gab es in Patara drei arme Schwestern. Der Heilige Nikolaus begab sich nachts
+            zu ihrem Haus und warf heimlich ein mit 300 Münzen gefülltes Tuch durch das
+            Fenster. Als die Familie am Morgen erwachte, traute sie ihren Augen kaum. Der
+            Vater lobte Gott und mit dem Geld verheiratete er seine älteste Tochter. Der
+            Heilige warf erneut heimlich ein Tuch mit Münzen in das Haus, und so wurde
+            auch die zweite Tochter verheiratet. Heimlich, damit ihn niemand beobachtete,
+            warf der Heilige Nikolaus auch ein drittes Tuch durch das Fenster, um seine
+            gute Tat zu vervollständigen. Der Vater jedoch wollte wissen, wer der Wohltäter
+            sei. Kaum hat er ein Geräusch gehört, begab er sich schnell vor das Haus und
+            sah, wie sich der Heilige Nikolaus rennend entfernte. Sofort dankte er ihm;
+            der Heilige aber, der kein Lob von den Menschen wollte, verlangte von ihm
+            Stillschweigen auf Lebenszeit.
+          </div>
+        </div>
+        <div class="star" style="left: 30%; top: 6%">
+          <a href="javascript:display_image(2, 1)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="play-button">
+          <a href="javascript:play_or_pause()">
+            <img src="icons/play-pause.svg" style="width: 100%">
+          </a>
+        </div>
+      </div>
+      <div class="bb-item page">
+        <img class="bg" src="pages/3_bg.png">
+        <div class="text" id="text-3" style="height: 72%">
+          <div class="text-scroll" id="text-scroll-3">
+            Der Heilige Nikolaus begab sich auf die Reise nach Jerusalem, um dort am
+            Allerheiligsten Grab des Herrn zu beten und einen geeigneten Ort zu finden,
+            um Mönch zu werden. Unterwegs mit dem Schiff, ereignete sich ein großes
+            Unwetter, das Schiff kämpfte gegen die schaumgekrönten Wellen an. Der Kapitän
+            und die Seeleute wussten nicht, was sie zu ihrer Rettung aus Seenot unternehmen
+            sollten und die Passagiere gerieten in Panik. Es war sicher, dass sie ertrinken
+            würden. Der Heilige Nikolaus kniete besonnen nieder und betete, dass das Unwetter
+            aufhören solle – und das Wunder geschah. Sofort begannen alle, Gott und dem
+            Heiligen für ihre Rettung zu danken. Während des Unwetters jedoch war ein Seemann
+            vom Mast gefallen und blieb tot auf dem Deck liegen. Nachdem er ein Gebet
+            gesprochen hatte,  fasste der Heilige Nikolaus den toten Seemann am Arm, und
+            dieser erwachte zum Leben, als ob er von einem tiefen Schlaf erwacht sei. Als
+            sie in Jerusalem ankamen, betete der Heilige am Allerheiligsten Grab und
+            beschloss, im Heiligen Land zu bleiben. Es erschien jedoch ein Engel des Herrn
+            und befahl ihm, in seine Heimat zurück zu kehren.
+          </div>
+        </div>
+        <div class="star" style="left: 9%; top: 6%">
+          <a href="javascript:display_image(3, 1)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="play-button">
+          <a href="javascript:play_or_pause()">
+            <img src="icons/play-pause.svg" style="width: 100%">
+          </a>
+        </div>
+      </div>
+      <div class="bb-item page">
+        <img class="bg" src="pages/4_bg.png">
+        <div class="text" id="text-4" style="height: 72%">
+          <div class="text-scroll" id="text-scroll-4">
+            Zu jener Zeit trat der Häretiker Arius mit falschen Vorstellungen über Gott auf.
+            Einige Unglückliche  glaubten, er lehre die Wahrheit, und folgten seiner Häresie.
+            Der Große und Heilige Konstantin, der Kaiser, lud alle Bischöfe in die Stadt Nicäa
+            ein, um zu beten und die göttliche Wahrheit ans Licht zu bringen. 318 Kirchenväter
+            trafen zusammen, unter ihnen der Heilige Athanasius und der Heilige Spyridon. Als
+            Arius die Kirchenväter mit seiner Lehre in eine schwierige Lage brachte,
+            vollbrachte der Heilige Spyridon das Wunder mit dem Dachziegel. Er nahm ein Stück
+            Ziegel in die Hand, betete – und der Ziegel trennte sich in drei Bestandteile:
+            Erde, Wasser und Feuer. Mit diesem Wunder erhellte er die Dreifaltigkeit Gottes:
+            Vater, Sohn und Heiliger Geist. Arius jedoch fuhr fort, seine falschen Ideen mit
+            Trotz zu verteidigen. Der Heilige Nikolaus, obwohl ruhig und besonnen, angetrieben
+            von göttlichem Eifer, gab Arius einen heftigen Schlag. Da es aber verboten war, in
+            Anwesenheit des Kaisers zu schlagen, fesselte man den Heiligen und warf ihn ins Gefängnis.
+          </div>
+        </div>
+        <div class="star" style="left: 29%; top: 3%">
+          <a href="javascript:display_image(4, 1)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="star" style="left: 10%; top: 80%">
+          <a href="javascript:display_image(4, 2)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="play-button">
+          <a href="javascript:play_or_pause()">
+            <img src="icons/play-pause.svg" style="width: 100%">
+          </a>
+        </div>
+      </div>
+      <div class="bb-item page">
+        <img class="bg" src="pages/5_bg.png">
+        <div class="text" id="text-5" style="height: 66%">
+          <div class="text-scroll" id="text-scroll-5">
+            Im Gefängnis betete der Heilige Nikolaus ununterbrochen. Am selben Abend noch
+            erschienen ihm Christus und die Gottesmutter und fragten ihn: „Nikolaus, warum
+            bist du eingekerkert?‟. „Um eurer Liebe willen‟, antwortete er voller Freude.
+            Daraufhin löste Christus seine Fesseln und übergab ihm das Evangelium und die
+            Gottesmutter zog ihm das Bischofsgewand an. Als ihm am nächsten Tag das Essen
+            in seine Zelle gebracht wurde, sahen die Wächter ihn das Evangelium lesend im
+            Bischofsgewand.  Die Aufseher fragten ihn verwundert, was geschehen sei und der
+            Heilige erzählte ihnen, was am vorhergehenden Abend passiert ist. Der Kaiser
+            befahl daraufhin sofort, ihn aus dem Kerker zu entlassen und bat ihn um
+            Verzeihung; so taten auch die Bischöfe. So geschah dies und viele weitere
+            Wunder geschahen in diesen Tagen durch die Heiligen Kirchenväter, Christi
+            Wahrheit erstrahlte und alle dankten Gott, bevor sie zufrieden in ihre Heimat
+            zurückkehrten.
+          </div>
+        </div>
+        <div class="star" style="left: 12%; top: 5.5%">
+          <a href="javascript:display_image(5, 1)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="play-button">
+          <a href="javascript:play_or_pause()">
+            <img src="icons/play-pause.svg" style="width: 100%">
+          </a>
+        </div>
+      </div>
+      <div class="bb-item page">
+        <img class="bg" src="pages/6_bg.png">
+        <div class="text" id="text-6" style="height: 79%">
+          <div class="text-scroll" id="text-scroll-6">
+            Viele der Wunder des Heiligen Nikolaus hatten mit dem Meer zu tun; deshalb gilt
+            er als Schutzpatron der Seeleute. Einmal drohten einige Seefahrer während ihrer
+            Reise über das Meer zu ertrinken. In dieser schwierigen Situation, wandten sie
+            sich an den Heiligen: „Heiliger Nikolaus, rette uns vor dem Ertrinken!‟.
+            Augenblicklich erschien der Heilige, übernahm das Ruder und sprach zu ihnen:
+            „Fürchtet euch nicht, ich bin bei euch! Ihr habt mich gerufen, und ich bin
+            gekommen, euch zu helfen!‟. Der Wind ließ nach, das Meer beruhigte sich und er
+            verschwand. Die Seeleute erreichten sicher den Hafen von Myra, ankerten dort
+            und wollten dem Heiligen für die Rettung vor dem sicheren Tod danken.  In der
+            Kirche angekommen, erkannten sie ihn sofort: er war der, den sie vorher auf
+            dem Meer getroffen hatten. Daher gibt es am Steuer eines jeden Schiffes eine
+            Ikone des Heiligen Nikolaus. Auf jeder griechischen Insel gibt es wenigstens
+            eine Kirche, die ihm geweiht ist und die Seeleute rufen ihn in schwierigen
+            Situationen: „Heiliger Nikolaus, rette uns!‟
+          </div>
+        </div>
+        <div class="star" style="left: 42%; top: 5%">
+          <a href="javascript:display_image(6, 1)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="star" style="left: 12%; top: 3%">
+          <a href="javascript:display_image(6, 2)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="play-button">
+          <a href="javascript:play_or_pause()">
+            <img src="icons/play-pause.svg" style="width: 100%">
+          </a>
+        </div>
+      </div>
+      <div class="bb-item page">
+        <img class="bg" src="pages/7_bg.png">
+        <div class="text" id="text-7" style="height: 79%">
+          <div class="text-scroll" id="text-scroll-7">
+            Im hohen Alter erkrankte der Heilige und verstarb kurz darauf. Während er
+            betete, blickte er nach oben und sah die Engel, die seine geheiligte Seele
+            begleiten sollten. Der Heilige Nikolaus war für das Volk die Sonne, die ihre
+            Seelen erleuchtete. Sein Gesicht strahlte engelsgleich, so dass es nicht nötig
+            war, dass er viele Ratschläge gab. Es reicht, wenn jemand ihn sieht, um Kraft zu
+            gewinnen. Sein Tod war für die Gläubigen schmerzhaft, aber gab ihnen auch Freude,
+            hatten sie doch jetzt einen so großen Fürsprecher im Himmel. Sein Leichnam wurde
+            in Myra in Kleinasien bestattet und die Christen bauten dort ihm zu Gedenken eine
+            gewaltige Kirche. Gott gab ihm das ausgezeichnete Geschenk,  dass Salböl aus
+            seinem Grab sprudelte. Die Kirche feiert sein Fest am 6. Dezember und sieht ihn
+            zusammen mit den Aposteln als apostelgleich an. An jedem Donnerstag, der den
+            Aposteln und dem großen Bischof Nikolaus geweiht ist, werden die schönsten Hymnen
+            und Loblieder für den Heiligen Nikolaus gesungen, den Beschützer der Seeleute.
+          </div>
+        </div>
+        <div class="star" style="left: 6%; top: 8%">
+          <a href="javascript:display_image(7, 1)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="star" style="left: 38%; top: 3%">
+          <a href="javascript:display_image(7, 2)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="play-button">
+          <a href="javascript:play_or_pause()">
+            <img src="icons/play-pause.svg" style="width: 100%">
+          </a>
+        </div>
+      </div>
+      <div class="bb-item page">
+        <img class="bg" src="pages/8_bg.png">
+        <div class="ctext" style="left: 8%; top: 69.5%; text-align: center; color: white">
+          Regel des Glaubens und Vorbild der Milde,<br>
+          Lehrer der Enthaltsamkeit bist du deiner<br>
+          Herde wahrhaft gewesen.<br>
+          Deshalb wurde deiner Demut Erhöhung zuteil und<br>
+          deiner Armut Reichtum. Heiliger Vater Nikolaus<br>
+          bitte Christus, unseren Gott, zu erretten unsere Seelen.
+        </div>
+        <div class="ctext" style="left: 59%; top: 22%">Ionien</div>
+        <div class="ctext" style="left: 66%; top: 16.5%">Lydien</div>
+        <div class="ctext" style="left: 75%; top: 17.5%">Lykaonien</div>
+        <div class="ctext" style="left: 86.5%; top: 19%">Kappadokien</div>
+        <div class="ctext" style="left: 62%; top: 26%">Karien</div>
+        <div class="ctext" style="left: 69%; top: 23.5%">Pisidien</div>
+        <div class="ctext" style="left: 74%; top: 27.5%">Pamphylia</div>
+        <div class="ctext" style="left: 86%; top: 28.5%">Kilikien</div>
+        <div class="ctext" style="left: 66%; top: 32%; font-weight: bold">Lykien</div>
+        <div class="ctext" style="left: 63.2%; top: 37.2%; font-weight: bold">Patara</div>
+        <div class="ctext" style="left: 69%; top: 37%; font-weight: bold">Myra</div>
+        <div class="ctext" style="left: 59.5%; top: 39.5%">Rhodos</div>
+        <div class="ctext" style="left: 56.5%; top: 44%">Karpathos</div>
+        <div class="ctext" style="left: 82%; top: 47%">Zypern</div>
+        <div class="ctext" style="left: 90.5%; top: 49.5%">Libanon</div>
+        <div class="ctext" style="left: 87.5%; top: 63%; font-weight: bold">Jerusalem</div>
+        <div class="ctext" style="left: 84%; top: 71.5%">Israel</div>
+        <div class="ctext" style="left: 72%; top: 76%">Kairo</div>
+        <div class="ctext" style="left: 71%; top: 70.5%">Ägypten</div>
+        <div class="ctext" style="left: 61%; top: 69%">Alexandria</div>
+        <div class="ctext" style="left: 60%; top: 52%; font-size: calc(2.5 * var(--vh))">
+          <svg viewBox="0 0 500 500">
+            <path id="curve" d="m 0.64003056,42.550399 c 0,0 152.80083944,81.430031 303.76205944,65.962561" style="fill: none" />
+            <text width="500" style="fill: #3871c1">
+              <textPath xlink:href="#curve">Mittelmeer</textPath>
+            </text>
+          </svg>
+        </div>
+        <div class="star" style="left: 6%; top: 8%">
+          <a href="javascript:display_image(8, 2)">
+            <img src="icons/star.svg" style="width: 100%">
+          </a>
+        </div>
+        <div class="play-button">
+          <a href="javascript:play_or_pause()">
+            <img src="icons/play-pause.svg" style="width: 100%">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div id="images" style="z-index: 100" onclick="hide_image()">
+      <img class="image" id="image-2-1" src="images/2_1.jpg">
+      <img class="image" id="image-3-1" src="images/3_1.jpg">
+      <img class="image" id="image-4-1" src="images/4_1.jpg">
+      <img class="image" id="image-4-2" src="images/4_2.jpg">
+      <img class="image" id="image-5-1" src="images/5_1.jpg">
+      <img class="image" id="image-6-1" src="images/6_1.jpg">
+      <img class="image" id="image-6-2" src="images/6_2.jpg">
+      <img class="image" id="image-7-1" src="images/7_1.jpg">
+      <img class="image" id="image-7-2" src="images/7_2.jpg">
+      <img class="image" id="image-8-1" src="images/8_1.jpg">
+      <img class="image" id="image-8-2" src="images/8_2.jpg">
+    </div>
+  </body>
+</html>
