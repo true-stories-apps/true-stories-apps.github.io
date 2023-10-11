@@ -138,6 +138,19 @@ function init_flip() {
         },
         onEndFlip: function(old, page, isLimit) {
             current_page = page;
+            if (current_page == 0) {
+                $("#play-button").hide();
+                $("#prev-button").hide();
+                $("#next-button").show();
+            } else if (current_page == max_page) {
+                $("#play-button").show();
+                $("#prev-button").show();
+                $("#next-button").hide();
+            } else {
+                $("#play-button").show();
+                $("#prev-button").show();
+                $("#next-button").show();
+            }
             play_audio();
         }
     });
@@ -151,6 +164,25 @@ function init_flip() {
         audio.play(); // necessary for ios
     });
 
-    $(".star").click(function(e) { e.stopPropagation(); });
-    $(".play-button").click(function(e) { e.stopPropagation(); });
+    $(".star").click(function(ev) { ev.stopPropagation(); });
+    $("#play-button").click(function(ev) {
+        play_or_pause();
+        ev.stopPropagation();
+    });
+    $("#prev-button").click(function(ev) {
+        prev();
+        ev.stopPropagation();
+    });
+    $("#next-button").click(function(ev) {
+        next();
+        ev.stopPropagation();
+    });
+
+    $(document).keyup(function(ev) {
+        if (ev.key == "ArrowRight") {
+            next();
+        } else if (ev.key == "ArrowLeft") {
+            prev();
+        }
+    });
 }
