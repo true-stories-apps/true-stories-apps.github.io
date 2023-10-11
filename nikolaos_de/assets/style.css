@@ -132,20 +132,6 @@ a, a:visited {
     color: #5a3114;
 }
 
-.play-button {
-    position: absolute;
-    top: calc(100*var(--vh) - 7.5em);
-    left: calc(100% - 7.5em);
-    width: 7.5em;
-    height: 7.5em;
-}
-
-.star {
-    position: absolute;
-    width: 5em;
-    height: 5em;
-}
-
 .image {
     position: absolute;
     display: none;
@@ -158,6 +144,42 @@ a, a:visited {
     width: 100%;
     height: 100%;
     display: none;
-    z-index: 100;
+    z-index: 50;
     background-color: #FFFFFF80;
+}
+
+.star {
+    position: absolute;
+    width: 5em;
+    height: 5em;
+}
+
+.star img {
+    width: 7vh;
+    height: 7vh;
+}
+
+.edge-button {
+    position: absolute;
+    width: 6em;
+    height: 6em;
+    cursor: pointer;
+    z-index: 100;
+}
+
+#play-button {
+    top: calc(100*var(--vh) - 7em);
+    left: calc(100% - 7em);
+    display: none;
+}
+
+#prev-button {
+    top: calc(50*var(--vh) - 3em);
+    left: 1em;
+    display: none;
+}
+
+#next-button {
+    top: calc(50*var(--vh) - 3em);
+    left: calc(100% - 7em);
 }
