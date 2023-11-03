@@ -138,19 +138,23 @@ function init_flip() {
         onEndFlip: function(old, page, isLimit) {
             current_page = page;
             if (current_page == 0) {
+                $("#page-button").hide();
                 $("#play-button").hide();
                 $("#prev-button").hide();
                 $("#next-button").show();
             } else if (current_page == max_page) {
+                $("#page-button").show();
                 $("#play-button").show();
                 $("#prev-button").show();
                 $("#next-button").hide();
             } else {
+                $("#page-button").show();
                 $("#play-button").show();
                 $("#prev-button").show();
                 $("#next-button").show();
             }
             play_audio();
+            $("#page-number").text(current_page);
         }
     });
     $(document).click(function(e) {
@@ -164,6 +168,10 @@ function init_flip() {
     });
 
     $(".star").click(function(ev) { ev.stopPropagation(); });
+    $("#page-button").click(function(ev) {
+        $("#page-drawer").slideDown();
+        ev.stopPropagation();
+    });
     $("#play-button").click(function(ev) {
         play_or_pause();
         ev.stopPropagation();
@@ -176,6 +184,10 @@ function init_flip() {
         next();
         ev.stopPropagation();
     });
+    $("#page-drawer").click(function(ev) {
+        $("#page-drawer").slideUp();
+        ev.stopPropagation();
+    });
 
     $(document).keyup(function(ev) {
         if (ev.key == "ArrowRight") {
@@ -184,4 +196,8 @@ function init_flip() {
             prev();
         }
     });
+}
+
+function set_page(nr) {
+    $("#flip").bookblock("jump", nr + 1);
 }

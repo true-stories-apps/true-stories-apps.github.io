@@ -23,11 +23,9 @@
           <p class="helptext">
             Αγγίξτε την οϑόνη στην αριστερή ή τη δεξιά πλευρά για να αλλάξετε σελίδες.
             Ο ήχος αναπαράγεται αυτόματα καϑώς γυρίζει η σελίδα.
-            Τα αστεράκια σας δείχνουν επιπλέον εικόνες.
+            Μπορείτε να κάνετε κλικ όπου βλέπετε επιπλέον εικόνες για μεγέθυνση.
           </p>
-          <a href="javascript:display_image(8, 1)">
-            <img src="icons/star.svg" style="width: 3em; height: 3em">
-          </a>
+          <img src="icons/star.svg" style="width: 2em; height: 2em">
         </div>
         <div class="credits">
           <p><b>Εικονογράφηση:</b> Κωνσταντίνα Ζαφείρη</p>
@@ -80,11 +78,6 @@
             μην πει τίποτα όσο ζει.
           </div>
         </div>
-        <div class="star" style="left: 30%; top: 6%">
-          <a href="javascript:display_image(2, 1)">
-            <img src="icons/star.svg">
-          </a>
-        </div>
       </div>
       <div class="bb-item page">
         <img class="bg" src="pages/3_bg.png">
@@ -106,9 +99,9 @@
             πατρίδα του.
           </div>
         </div>
-        <div class="star" style="left: 9%; top: 6%">
+        <div class="star" style="left: 4%; top: 83%">
           <a href="javascript:display_image(3, 1)">
-            <img src="icons/star.svg">
+            <img src="images/3_1_p.png">
           </a>
         </div>
       </div>
@@ -132,14 +125,9 @@
             άγιο και τον έκλεισαν φυλακή.
           </div>
         </div>
-        <div class="star" style="left: 29%; top: 3%">
+        <div class="star" style="left: 87%; top: 81%">
           <a href="javascript:display_image(4, 1)">
-            <img src="icons/star.svg">
-          </a>
-        </div>
-        <div class="star" style="left: 10%; top: 80%">
-          <a href="javascript:display_image(4, 2)">
-            <img src="icons/star.svg">
+            <img src="images/4_1_p.png">
           </a>
         </div>
       </div>
@@ -161,9 +149,9 @@
             στα σπίτια τους.
           </div>
         </div>
-        <div class="star" style="left: 12%; top: 5.5%">
+        <div class="star" style="left: 72%; top: 83%">
           <a href="javascript:display_image(5, 1)">
-            <img src="icons/star.svg">
+            <img src="images/5_1_p.png">
           </a>
         </div>
       </div>
@@ -186,16 +174,6 @@
             επικαλούνται πάντα στις δυσκολίες της ϑάλασσας. “Αη Νικόλα σώσε μας”!
           </div>
         </div>
-        <div class="star" style="left: 42%; top: 5%">
-          <a href="javascript:display_image(6, 1)">
-            <img src="icons/star.svg">
-          </a>
-        </div>
-        <div class="star" style="left: 12%; top: 3%">
-          <a href="javascript:display_image(6, 2)">
-            <img src="icons/star.svg">
-          </a>
-        </div>
       </div>
       <div class="bb-item page">
         <img class="bg" src="pages/7_bg.png">
@@ -217,14 +195,9 @@
             ύμνοι και εγκώμια για τον άγιο, που προστατεύει ιδιαίτερα τους ναυτικούς.
           </div>
         </div>
-        <div class="star" style="left: 6%; top: 8%">
+        <div class="star" style="left: 75%; top: 85%">
           <a href="javascript:display_image(7, 1)">
-            <img src="icons/star.svg">
-          </a>
-        </div>
-        <div class="star" style="left: 38%; top: 3%">
-          <a href="javascript:display_image(7, 2)">
-            <img src="icons/star.svg">
+            <img src="images/7_1_p.png">
           </a>
         </div>
       </div>
@@ -266,28 +239,19 @@
             </text>
           </svg>
         </div>
-        <div class="star" style="left: 6%; top: 8%">
-          <a href="javascript:display_image(8, 2)">
-            <img src="icons/star.svg">
-          </a>
-        </div>
       </div>
     </div>
 
     <div id="images" style="z-index: 100" onclick="hide_image()">
-      <img class="image" id="image-2-1" src="images/2_1.jpg">
       <img class="image" id="image-3-1" src="images/3_1.jpg">
       <img class="image" id="image-4-1" src="images/4_1.jpg">
-      <img class="image" id="image-4-2" src="images/4_2.jpg">
       <img class="image" id="image-5-1" src="images/5_1.jpg">
-      <img class="image" id="image-6-1" src="images/6_1.jpg">
-      <img class="image" id="image-6-2" src="images/6_2.jpg">
       <img class="image" id="image-7-1" src="images/7_1.jpg">
-      <img class="image" id="image-7-2" src="images/7_2.jpg">
-      <img class="image" id="image-8-1" src="images/8_1.jpg">
-      <img class="image" id="image-8-2" src="images/8_2.jpg">
     </div>
 
+    <div class="edge-button" id="page-button">
+      <span id="page-number">1</span>
+    </div>
     <div class="edge-button" id="play-button">
       <img src="icons/play-pause.svg">
     </div>
@@ -296,6 +260,17 @@
     </div>
     <div class="edge-button" id="next-button">
       <img src="icons/next.svg">
+    </div>
+
+    <div id="page-drawer">
+      <a href="javascript:set_page(1)">1</a>
+      <a href="javascript:set_page(2)">2</a>
+      <a href="javascript:set_page(3)">3</a>
+      <a href="javascript:set_page(4)">4</a>
+      <a href="javascript:set_page(5)">5</a>
+      <a href="javascript:set_page(6)">6</a>
+      <a href="javascript:set_page(7)">7</a>
+      <a href="javascript:set_page(8)">8</a>
     </div>
   </body>
 </html>
