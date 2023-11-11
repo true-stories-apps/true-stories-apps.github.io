@@ -1,27 +1,30 @@
 var current_page = 0;
 var direction = 0;
 var audio = null;
+var starttime = 0;
 var lasttime = 0;
 var current_img = null;
 var auto_next = null;
 const max_page = 8;
 
 // [delay, total duration]
-// if it scrolls too fast, decrease total duration!
+// if it scrolls too fast, increase total duration!
+// if it scrolls too slow, decrease total duration!
 const durations = {
-    1: [22, 72],
-    2: [2, 175],
-    3: [2, 288],
-    4: [2, 92.5],
-    5: [2, 93],
-    6: [2, 72],
-    7: [2, 53],
+    1: [22, 70],
+    2: [2, 167],
+    3: [5, 245],
+    4: [2, 90],
+    5: [2, 90],
+    6: [2, 71],
+    7: [2, 51],
     8: [2, 88]
 };
 
 function play_audio() {
     if (current_page > 0) {
         audio.src = "audio/" + current_page + ".mp3";
+        audio.currentTime = starttime;
         audio.play();
     } else {
         audio.pause();
@@ -45,6 +48,7 @@ function audio_update() {
     if (info === undefined) return;
     var position = (audio.currentTime - info[0]) / info[1];
     if (position < 0) position = 0;
+    if (position > 1) position = 1;
     var el = $("#text-scroll-" + current_page);
     var vis = $("#text-" + current_page).height();
     var dist = el.height() - vis;
@@ -155,7 +159,7 @@ function init_flip() {
                 $("#next-button").show();
             }
             play_audio();
-	    $("#page-number").text(current_page);
+            $("#page-number").text(current_page);
         }
     });
     $(document).click(function(e) {
@@ -170,7 +174,7 @@ function init_flip() {
 
     $(".star").click(function(ev) { ev.stopPropagation(); });
     $("#page-button").click(function(ev) {
-	$("#page-drawer").slideDown();
+        $("#page-drawer").slideDown();
         ev.stopPropagation();
     });
     $("#play-button").click(function(ev) {
@@ -186,7 +190,7 @@ function init_flip() {
         ev.stopPropagation();
     });
     $("#page-drawer").click(function(ev) {
-	$("#page-drawer").slideUp();
+        $("#page-drawer").slideUp();
         ev.stopPropagation();
     });
 
@@ -197,6 +201,15 @@ function init_flip() {
             prev();
         }
     });
+
+    var q = document.location.search;
+    if (q !== "") {
+        q = q.substr(1).split(",");
+        if (q[1])
+            starttime = parseInt(q[1]);
+        if (q[0])
+            set_page(parseInt(q[0]));
+    }
 }
 
 function set_page(nr) {

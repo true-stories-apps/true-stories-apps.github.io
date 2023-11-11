@@ -1,26 +1,29 @@
 var current_page = 0;
 var direction = 0;
 var audio = null;
+var starttime = 0;
 var lasttime = 0;
 var current_img = null;
 var auto_next = null;
 const max_page = 8;
 
 // [delay, total duration]
-// if it scrolls too fast, decrease total duration!
+// if it scrolls too fast, increase total duration!
+// if it scrolls too slow, decrease total duration!
 const durations = {
     1: [16, 70],
     2: [2, 67],
-    3: [2, 68],
-    4: [2, 73],
+    3: [2, 66],
+    4: [2, 70],
     5: [2, 58],
-    6: [2, 70],
-    7: [2, 75],
+    6: [2, 68],
+    7: [2, 72],
 };
 
 function play_audio() {
     if (current_page > 0) {
         audio.src = "audio/" + current_page + ".mp3";
+        audio.currentTime = starttime;
         audio.play();
     } else {
         audio.pause();
@@ -44,6 +47,7 @@ function audio_update() {
     if (info === undefined) return;
     var position = (audio.currentTime - info[0]) / info[1];
     if (position < 0) position = 0;
+    if (position > 1) position = 1;
     var el = $("#text-scroll-" + current_page);
     var vis = $("#text-" + current_page).height();
     var dist = el.height() - vis;
@@ -196,6 +200,15 @@ function init_flip() {
             prev();
         }
     });
+
+    var q = document.location.search;
+    if (q !== "") {
+        q = q.substr(1).split(",");
+        if (q[1])
+            starttime = parseInt(q[1]);
+        if (q[0])
+            set_page(parseInt(q[0]));
+    }
 }
 
 function set_page(nr) {
