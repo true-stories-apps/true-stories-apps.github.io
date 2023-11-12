@@ -1,26 +1,29 @@
 var current_page = 0;
 var direction = 0;
 var audio = null;
+var starttime = 0;
 var lasttime = 0;
 var current_img = null;
 var auto_next = null;
 const max_page = 8;
 
 // [delay, total duration]
-// if it scrolls too fast, decrease total duration!
+// if it scrolls too fast, increase total duration!
+// if it scrolls too slow, decrease total duration!
 const durations = {
-    1: [16, 66],
-    2: [2, 73.5],
-    3: [2, 74],
-    4: [2, 85],
-    5: [2, 58],
-    6: [2, 67],
-    7: [2, 65],
+    1: [16, 61],
+    2: [2, 70],
+    3: [2, 70],
+    4: [2, 68],
+    5: [2, 55],
+    6: [2, 62],
+    7: [2, 63],
 };
 
 function play_audio() {
     if (current_page > 0) {
         audio.src = "audio/" + current_page + ".mp3";
+        audio.currentTime = starttime;
         audio.play();
     } else {
         audio.pause();
@@ -44,6 +47,7 @@ function audio_update() {
     if (info === undefined) return;
     var position = (audio.currentTime - info[0]) / info[1];
     if (position < 0) position = 0;
+    if (position > 1) position = 1;
     var el = $("#text-scroll-" + current_page);
     var vis = $("#text-" + current_page).height();
     var dist = el.height() - vis;
@@ -138,19 +142,23 @@ function init_flip() {
         onEndFlip: function(old, page, isLimit) {
             current_page = page;
             if (current_page == 0) {
+                $("#page-button").hide();
                 $("#play-button").hide();
                 $("#prev-button").hide();
                 $("#next-button").show();
             } else if (current_page == max_page) {
+                $("#page-button").show();
                 $("#play-button").show();
                 $("#prev-button").show();
                 $("#next-button").hide();
             } else {
+                $("#page-button").show();
                 $("#play-button").show();
                 $("#prev-button").show();
                 $("#next-button").show();
             }
             play_audio();
+            $("#page-number").text(current_page);
         }
     });
     $(document).click(function(e) {
@@ -164,6 +172,10 @@ function init_flip() {
     });
 
     $(".star").click(function(ev) { ev.stopPropagation(); });
+    $("#page-button").click(function(ev) {
+        $("#page-drawer").slideDown();
+        ev.stopPropagation();
+    });
     $("#play-button").click(function(ev) {
         play_or_pause();
         ev.stopPropagation();
@@ -176,6 +188,10 @@ function init_flip() {
         next();
         ev.stopPropagation();
     });
+    $("#page-drawer").click(function(ev) {
+        $("#page-drawer").slideUp();
+        ev.stopPropagation();
+    });
 
     $(document).keyup(function(ev) {
         if (ev.key == "ArrowRight") {
@@ -184,4 +200,17 @@ function init_flip() {
             prev();
         }
     });
+
+    var q = document.location.search;
+    if (q !== "") {
+        q = q.substr(1).split(",");
+        if (q[1])
+            starttime = parseInt(q[1]);
+        if (q[0])
+            set_page(parseInt(q[0]));
+    }
+}
+
+function set_page(nr) {
+    $("#flip").bookblock("jump", nr + 1);
 }

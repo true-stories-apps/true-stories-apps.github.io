@@ -114,7 +114,7 @@ a, a:visited {
     top: 5%;
     overflow: hidden;
     font-size: calc(4 * var(--vh));
-    text-align: justify;
+    text-align: left;
     line-height: 150%;
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
@@ -150,13 +150,14 @@ a, a:visited {
 
 .star {
     position: absolute;
-    width: 5em;
-    height: 5em;
+    width: 7em;
+    height: 7em;
+    border: 0.2em solid #666;
 }
 
 .star img {
-    width: 7vh;
-    height: 7vh;
+    width: 100%;
+    height: 100%;
 }
 
 .edge-button {
@@ -165,6 +166,14 @@ a, a:visited {
     height: 6em;
     cursor: pointer;
     z-index: 100;
+}
+
+#page-button {
+    top: calc(100*var(--vh) - 7em);
+    left: 1em;
+    display: none;
+    background-color: #ffffff81;
+    text-align: center;
 }
 
 #play-button {
@@ -182,4 +191,29 @@ a, a:visited {
 #next-button {
     top: calc(50*var(--vh) - 3em);
     left: calc(100% - 7em);
+}
+
+#page-number {
+    font-size: 5em;
+    color: #666;
+    line-height: 110%;
+}
+
+#page-drawer {
+    position: absolute;
+    top: calc(100*var(--vh) - 7em);
+    left: 10em;
+    height: 6em;
+    cursor: pointer;
+    z-index: 100;
+    background-color: #ffffff81;
+    display: none;
+}
+
+#page-drawer a {
+    font-size: 5em;
+    color: #666;
+    line-height: 110%;
+    text-decoration: none;
+    padding: 0 0.25em 0 0.25em;
 }
