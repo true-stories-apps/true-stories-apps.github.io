@@ -62,6 +62,11 @@ function audio_ended() {
     if (current_page < 8) {
         auto_next = window.setTimeout(next, 5000);
     }
+    if (current_page == 8) {
+        // special: show translation
+        $("#chant-old").hide();
+        $("#chant-modern").show();
+    }
 }
 
 function display_image(pg, nr) {
