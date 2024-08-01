@@ -1,0 +1,220 @@
+@font-face {
+  font-family: GentiumPlusW;
+  src: url(GentiumPlus-R.woff);
+}
+
+:root {
+    --vh: 1vh;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    overflow-y: hidden;
+    font-size: calc(2 * var(--vh));
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    overflow-y: hidden;
+    font-family: GentiumPlusW, sans-serif;
+    font-weight: 300;
+    text-rendering: optimizelegibility;
+    background-color: #ccc;
+    background-image: url(../pages/0_frame.png);
+    background-size: 25vw calc(100 * var(--vh));
+}
+
+b {
+    font-weight: bold;
+}
+
+a, a:visited {
+    color: #1458a6;
+}
+
+#flip {
+	width: calc(150 * var(--vh));
+	height: calc(100 * var(--vh));
+}
+
+.page {
+    background-color: white;
+}
+
+.bg {
+    position: absolute;
+    left: 0;
+    height: calc(100 * var(--vh));
+}
+
+.intro {
+    position: absolute;
+    left: 56%;
+    width: 38%;
+    top: 5%;
+    font-size: calc(2.8 * var(--vh));
+    text-align: center;
+}
+
+.lefttitle {
+    position: absolute;
+    font-size: calc(4.8 * var(--vh));
+    width: 25%;
+    left: 12.5%;
+    top: 25.7%;
+    color: #347896;
+    text-shadow: 0 0 4px #5a3114;
+    text-align: center;
+    line-height: 120%;
+    font-weight: bold;
+}
+
+.pretitle {
+    color: #5a3114;
+    font-size: 140%;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+.maintitle {
+    color: #666;
+    font-size: 120%;
+}
+
+.helptext {
+    color: #7a5134;
+}
+
+.credits {
+    position: absolute;
+    left: 53%;
+    width: 44%;
+    top: 56%;
+    font-size: calc(2.5 * var(--vh));
+    text-align: center;
+    color: #666;
+}
+
+.credits p {
+    margin: 0.4em 0;
+}
+
+.initial {
+    float: left;
+    padding-right: 0.5em;
+    width: calc(8 * var(--vh));
+}
+
+.text {
+    position: absolute;
+    left: 55%;
+    width: 40%;
+    top: 5%;
+    overflow: hidden;
+    font-size: calc(4 * var(--vh));
+    text-align: left;
+    line-height: 150%;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+.text-scroll {
+    position: absolute;
+}
+
+.ctext {
+    position: absolute;
+    font-size: calc(2.2 * var(--vh));
+    width: 35%;
+    color: #5a3114;
+}
+
+.image {
+    position: absolute;
+    display: none;
+}
+
+#images {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 50;
+    background-color: #FFFFFF80;
+}
+
+.star {
+    position: absolute;
+    width: 7em;
+    height: 7em;
+    border: 0.2em solid #666;
+}
+
+.star img {
+    width: 100%;
+    height: 100%;
+}
+
+.edge-button {
+    position: absolute;
+    width: 6em;
+    height: 6em;
+    cursor: pointer;
+    z-index: 100;
+}
+
+#page-button {
+    top: calc(100*var(--vh) - 7em);
+    left: 1em;
+    display: none;
+    background-color: #ffffff81;
+    text-align: center;
+}
+
+#play-button {
+    top: calc(100*var(--vh) - 7em);
+    left: calc(100% - 7em);
+    display: none;
+}
+
+#prev-button {
+    top: calc(50*var(--vh) - 3em);
+    left: 1em;
+    display: none;
+}
+
+#next-button {
+    top: calc(50*var(--vh) - 3em);
+    left: calc(100% - 7em);
+}
+
+#page-number {
+    font-size: 5em;
+    color: #666;
+    line-height: 110%;
+}
+
+#page-drawer {
+    position: absolute;
+    top: calc(100*var(--vh) - 7em);
+    left: 10em;
+    height: 6em;
+    cursor: pointer;
+    z-index: 100;
+    background-color: #ffffff81;
+    display: none;
+}
+
+#page-drawer a {
+    font-size: 5em;
+    color: #666;
+    line-height: 110%;
+    text-decoration: none;
+    padding: 0 0.25em 0 0.25em;
+}
