@@ -19,7 +19,7 @@ const durations = {
     6: [2, 65],
     7: [2, 58],
     8: [2, 83],
-    9: [2, 40]
+    9: [10, 40]
 };
 
 function play_audio() {
